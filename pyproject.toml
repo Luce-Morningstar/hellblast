@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hellblast"
+version = "0.1.0"
+description = "GPU-accelerated HEALPix spherical harmonics library"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Luce Morningstar", email = "luce@morningstar.dev"}
+]
+keywords = ["healpix", "spherical harmonics", "gpu", "cuda", "cupy", "cosmology", "cmb"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20",
+    "cupy-cuda12x>=12.0",  # Or cupy-cuda11x for CUDA 11
+]
+
+[project.optional-dependencies]
+fits = ["astropy>=5.0"]
+viz = ["matplotlib>=3.5"]
+compat = ["healpy>=1.16"]  # For pixel window fallback
+all = [
+    "astropy>=5.0",
+    "matplotlib>=3.5",
+    "healpy>=1.16",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-benchmark",
+]
+
+[project.urls]
+Homepage = "https://github.com/lucemorningstar/hellblast"
+Documentation = "https://github.com/lucemorningstar/hellblast#readme"
+Repository = "https://github.com/lucemorningstar/hellblast"
+
+[tool.setuptools]
+packages = ["hellblast"]
+package-dir = {"" = "."}
+
+[tool.setuptools.package-data]
+hellblast = ["*.cu", "*.cuh"]
