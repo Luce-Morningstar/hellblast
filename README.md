@@ -142,3 +142,13 @@ MIT
 ## Author
 
 Luce Morningstar — Project Lilith / Measurement Field Theory
+
+
+If this Repo Helped you I accept donations at 
+
+BTC: bc1qkn5y68f6740vky7t3t6skcmfk6uamkm96yjztv
+
+ETH: 0x32184fde76689da3c90bc631d988bdd48dc46bf4
+
+
+Ad astra per noctem obscuram
